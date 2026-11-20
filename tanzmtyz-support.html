@@ -1,0 +1,1019 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071b2b">
+<title>TanzMtyz • Aqua Support</title>
+<style>
+:root{
+ --night:#071725;--deep:#0a2638;--ice:#dffaff;--muted:#a9c9d5;
+ --cyan:#69e7f4;--blue:#67aaff;--violet:#a68cff;--line:#d8f8ff35;
+ --glass:rgba(206,245,255,.085);--glass2:rgba(225,250,255,.14);
+ --shadow:0 22px 65px #020b16a8;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:25px}
+body{
+ margin:0;min-height:100vh;color:#effcff;
+ font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+ background:
+  radial-gradient(ellipse at 12% 8%,#1d6680 0,transparent 33%),
+  radial-gradient(ellipse at 90% 26%,#394c91 0,transparent 34%),
+  radial-gradient(ellipse at 45% 90%,#0c5969 0,transparent 38%),
+  linear-gradient(145deg,#061522,#0a2638 48%,#111b3b);
+ background-attachment:fixed;overflow-x:hidden
+}
+body:before,body:after{content:"";position:fixed;inset:-20%;pointer-events:none;z-index:-1}
+body:before{
+ background:
+ radial-gradient(ellipse at 30% 30%,#8ff5ff20,transparent 22%),
+ radial-gradient(ellipse at 70% 65%,#a68cff20,transparent 24%);
+ filter:blur(32px);animation:waterDrift 17s ease-in-out infinite alternate
+}
+body:after{
+ opacity:.14;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.24'/%3E%3C/svg%3E")
+}
+@keyframes waterDrift{to{transform:translate3d(4%,-3%,0) rotate(8deg)}}
+.wrap{max-width:760px;margin:auto;padding:25px 17px calc(125px + env(safe-area-inset-bottom));position:relative}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:35px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:950;letter-spacing:-.5px;font-size:19px}
+.brandmark{width:42px;height:42px;flex:0 0 42px;border-radius:14px;display:block;overflow:hidden;border:1px solid #dffaff55;background:#dffaff18;box-shadow:0 5px 25px #68dff45a,inset 0 1px 1px #ffffff55}.brandmark img{width:100%;height:100%;display:block;object-fit:cover}
+.brand small{display:block;font-size:9px;letter-spacing:3px;color:#a8d9e5;font-weight:850;margin-top:-3px}
+.status{padding:8px 12px;border:1px solid var(--line);border-radius:30px;background:#dffaff0d;color:#d4f8ff;font-size:11px;font-weight:800;backdrop-filter:blur(18px)}
+.hero{margin:24px 4px 27px}
+.eyebrow,.kicker,.section-title{font-size:10px;letter-spacing:3.3px;font-weight:950;color:#9bcbd9}
+.hero h1{font-size:clamp(42px,9vw,67px);line-height:.99;letter-spacing:-3.7px;margin:13px 0 14px;max-width:620px}
+.hero h1 span{background:linear-gradient(100deg,#a4faff,#83bfff 52%,#c3aaff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:#bed9e2;font-size:16px;max-width:580px;margin:0}
+
+/* Islamic Arabic Accessory & Ornament */
+.islamic-header-ornament{
+ display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:16px;color:#69eaff;font-size:18px;
+}
+.islamic-header-ornament span.star{font-size:14px;opacity:0.8}
+.islamic-badge{
+ position:relative;isolation:isolate;display:flex;align-items:center;justify-content:center;
+ width:max-content;max-width:100%;gap:10px;padding:10px 22px;margin:0 auto 16px;
+ border-radius:22px;border:1px solid rgba(105,231,244,0.55);
+ background:linear-gradient(135deg,rgba(105,231,244,0.18),rgba(166,140,255,0.15));
+ color:#a4faff;font-size:17px;font-weight:800;letter-spacing:.5px;text-align:center;
+ backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);
+ box-shadow:0 0 10px rgba(105,231,244,.28),0 0 24px rgba(105,231,244,.18),0 6px 24px rgba(105,231,244,.2),inset 0 0 12px rgba(105,231,244,.10);
+ animation:islamicLedPulse 3.2s ease-in-out infinite;
+}
+.islamic-badge span:not(.crescent){text-align:center;line-height:1.8}
+.islamic-badge:before,.islamic-badge:after{content:"";position:absolute;top:50%;width:5px;height:5px;border-radius:50%;z-index:-1;background:#c9ffff;box-shadow:0 0 6px 2px #69eaff,0 0 13px 4px #69eaffaa,0 0 20px 5px #a68cff77;transform:translateY(-50%);animation:islamicEndLed 2.4s ease-in-out infinite alternate}
+.islamic-badge:before{left:5px}.islamic-badge:after{right:5px;animation-delay:1.2s}
+.islamic-badge span.crescent{font-size:19px;filter:drop-shadow(0 0 8px #69eaff)}
+@keyframes islamicLedPulse{0%,100%{box-shadow:0 0 8px #69eaff44,0 0 20px #69eaff22,0 6px 24px #69eaff33,inset 0 0 10px #69eaff18}50%{box-shadow:0 0 13px #69eaff88,0 0 30px #a68cff55,0 6px 28px #69eaff55,inset 0 0 14px #69eaff2b}}
+@keyframes islamicEndLed{from{opacity:.65;filter:brightness(.9)}to{opacity:1;filter:brightness(1.5)}}
+@media(max-width:480px){.islamic-badge{font-size:16px;padding:9px 17px;gap:8px}}
+
+.pills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:22px}
+.pills span{position:relative;display:flex;align-items:center;justify-content:center;gap:7px;min-height:49px;padding:10px 11px;border-radius:17px;border:1px solid #dffaff35;background:linear-gradient(145deg,#e9fdff20,#b6eaff09 60%,#c6c4ff12);color:#e9fcff;font-size:11px;font-weight:800;letter-spacing:.1px;text-align:center;box-shadow:inset 0 1px 0 #ffffff2c,0 8px 22px #020b1628;backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%)}
+.pills span:before{content:"";width:7px;height:7px;flex:0 0 7px;border-radius:50%;background:linear-gradient(145deg,#b9ffff,#76baff);box-shadow:0 0 10px #7beaffaa}
+@media(max-width:480px){.pills{gap:7px}.pills span{font-size:10px;min-height:47px;padding:8px 6px;border-radius:15px;gap:5px}}
+.glass{
+ position:relative;border:1px solid #dffaff29;
+ background:linear-gradient(145deg,rgba(218,249,255,.145),rgba(160,211,255,.055) 45%,rgba(255,255,255,.075));
+ border-radius:29px;padding:21px;margin:18px 0;
+ box-shadow:var(--shadow),inset 0 1px 0 #ffffff2b,inset 0 -1px 0 #c5f8ff0c;
+ backdrop-filter:blur(25px) saturate(155%);-webkit-backdrop-filter:blur(25px) saturate(155%);
+ overflow:hidden
+}
+.glass:after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:linear-gradient(122deg,#fff2 0%,transparent 20%,transparent 70%,#b4eaff0c 100%);opacity:.7}
+.qr-card{isolation:isolate;overflow:visible}
+.qr-card:before{
+ content:"";position:absolute;inset:-1.5px;border-radius:30px;padding:1.5px;
+ background:conic-gradient(from var(--led-angle,0deg),#65efff 0deg,#a9faff 36deg,#668dff 72deg,#c4a4ff 115deg,#69eaff 160deg,#d5ffff 205deg,#728cff 250deg,#7ff3ff 300deg,#65efff 360deg);
+ -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;
+ animation:ledLoop 5.2s linear infinite;filter:drop-shadow(0 0 5px #72eaff8c) drop-shadow(0 0 13px #8f8dff48);pointer-events:none;z-index:-1
+}
+.qr-card:after{content:"";position:absolute;inset:-8px;border-radius:36px;box-shadow:0 0 24px #66eaff19,0 0 55px #8a9dff12;pointer-events:none;z-index:-2}
+@property --led-angle{syntax:"<angle>";initial-value:0deg;inherits:false}
+@keyframes ledLoop{to{--led-angle:360deg}}
+.qr-top{display:flex;justify-content:space-between;align-items:center;margin:0 2px 14px}
+.qr-top strong{font-size:21px;letter-spacing:-.5px}
+.qr-top span{font-size:10px;letter-spacing:2.5px;font-weight:950;color:#a9d5e1}
+.qr-paper{
+ position:relative;background:#faffff;color:#162d3b;border-radius:23px;padding:15px;
+ box-shadow:inset 0 1px 0 #fff,0 12px 32px #020b163d;overflow:hidden
+}
+.qr-paper:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 0% 0%,#a8faff33,transparent 40%),radial-gradient(ellipse at 100% 100%,#a9b8ff25,transparent 40%)}
+.qr-frame{position:relative;z-index:1;aspect-ratio:1;width:100%;display:grid;place-items:center;border-radius:13px;overflow:hidden;cursor:default}
+.qr-frame:before{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background:
+ linear-gradient(#ff876f,#ff876f) left top/38px 6px no-repeat,
+ linear-gradient(#ff876f,#ff876f) left top/6px 38px no-repeat,
+ linear-gradient(#ff876f,#ff876f) right top/38px 6px no-repeat,
+ linear-gradient(#ff876f,#ff876f) right top/6px 38px no-repeat,
+ linear-gradient(#ff876f,#ff876f) left bottom/38px 6px no-repeat,
+ linear-gradient(#ff876f,#ff876f) left bottom/6px 38px no-repeat,
+ linear-gradient(#ff876f,#ff876f) right bottom/38px 6px no-repeat,
+ linear-gradient(#ff876f,#ff876f) right bottom/6px 38px no-repeat
+}
+.qr-img{display:block;width:min(100%,430px);height:100%;object-fit:contain;position:relative;z-index:1}
+.merchant{text-align:center;margin:18px 0 3px}
+.merchant label{display:block;color:#8fbac9;font-size:10px;letter-spacing:3px;font-weight:950}
+.merchant strong{display:block;font-size:27px;letter-spacing:.4px;margin:2px 0}
+.merchant p{margin:0;color:#b7d1da;font-size:13px}
+.btn{
+ position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:9px;
+ min-height:54px;padding:14px 19px;border-radius:999px;border:1px solid #e1fbff35;
+ background:linear-gradient(145deg,#e8fcff20,#b7eaff0b);color:#f1fdff;
+ font:inherit;font-weight:850;cursor:pointer;text-decoration:none;
+ box-shadow:inset 0 1px 0 #ffffff35,inset 0 -1px 0 #ffffff08,0 9px 24px #020b1635;
+ backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);
+ transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease,filter .22s ease
+}
+.btn:before{content:"";position:absolute;inset:-40%;z-index:-1;background:linear-gradient(115deg,transparent 35%,#fff5 48%,#c9fbff2b 52%,transparent 65%);transform:translateX(-65%) rotate(8deg);transition:transform .55s ease}
+.btn:hover:before{transform:translateX(65%) rotate(8deg)}
+.btn:active{transform:scale(.965);box-shadow:inset 0 0 25px #aaf7ff36,0 0 24px #70eaff42;filter:brightness(1.12)}
+.btn.primary{border:1px solid #c8fbff78;color:#062434;background:linear-gradient(105deg,#a8faff,#75d5f4 48%,#aeb6ff);box-shadow:0 8px 27px #67dff43c,inset 0 1px 0 #fff9}
+.btn.full{width:100%;margin-top:17px;min-height:60px;font-size:16px}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:11px}
+.actions .btn{min-height:57px}
+.btn .sym{font-size:18px}
+.section-title{margin:31px 4px 12px}
+.social-row{display:flex;gap:14px;align-items:center}
+.wa-mark{width:22px;height:22px;display:block;flex:0 0 auto}
+.social-icon{width:57px;height:57px;flex:0 0 57px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(145deg,#9cf8ff,#8caeff);color:#082638;font-size:23px;box-shadow:0 8px 22px #6de7ff2a}
+.social-row h3{margin:0;font-size:19px}.social-row p{margin:3px 0 0;color:#aecbd5;font-size:13px}
+.social-actions{display:flex;gap:10px;margin-top:17px}.social-actions .btn:first-child{flex:1}
+
+
+/* WhatsApp Admin card: RGB LED + branded WhatsApp actions */
+.admin-wa-card{position:relative;isolation:isolate;overflow:visible!important}
+.admin-wa-card .social-icon{background:linear-gradient(145deg,#20d875,#079b50);color:#fff;box-shadow:0 8px 24px #13c86b55,0 0 18px #25e88735}
+.admin-wa-card .admin-wa-mark{width:34px;height:34px;display:block;filter:drop-shadow(0 2px 4px #004b2a55)}
+.admin-wa-actions{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;margin-top:17px}
+.admin-wa-actions .btn{min-height:57px}
+.admin-wa-chat{color:#042b1a!important;border:1px solid #a4ffd0!important;background:linear-gradient(105deg,#25d979,#16bd62 55%,#08a94e)!important;box-shadow:0 8px 26px #13c86b45,inset 0 1px 0 #eafff5b8,inset 0 -2px 8px #006b3433!important}
+.admin-wa-copy{color:#d9ffea!important;border-color:#5be69a70!important;background:linear-gradient(145deg,#159b5c45,#087d4930)!important}
+.admin-wa-actions .btn:focus-visible{outline:2px solid #baffd5;outline-offset:3px}
+@media(max-width:390px){.admin-wa-actions{grid-template-columns:1fr}.admin-wa-actions .btn{width:100%}}
+
+/* TikTok brand treatment */
+.tiktok-mark{width:21px;height:21px;display:block;flex:0 0 auto;fill:currentColor}
+.tiktok-btn{display:flex!important;align-items:center;justify-content:center;gap:10px;color:#fff!important;background:linear-gradient(145deg,#080808,#000)!important;border:1px solid #ffffff30!important;box-shadow:0 9px 24px #0008,inset 0 1px 0 #ffffff20!important}
+.tiktok-btn:before{background:linear-gradient(115deg,transparent 35%,#ffffff35 48%,#ffffff12 52%,transparent 65%)}
+.tiktok-btn:active{box-shadow:0 0 0 1px #25f4ee55,inset 0 0 22px #ffffff20!important;filter:brightness(1.15)}
+.telegram-btn{display:flex!important;align-items:center;justify-content:center;gap:10px;color:#fff!important;
+ background:linear-gradient(145deg,#269bd5,#168acb 55%,#087dbb)!important;
+ border:1px solid #9cddff85!important;
+ box-shadow:0 9px 26px #087fbd55,inset 0 1px 0 #ffffff55,inset 0 -2px 8px #075b9638!important}
+.telegram-plane{width:25px;height:25px;display:inline-grid;place-items:center;border-radius:50%;font-size:16px;
+ background:#ffffff24;transform:rotate(-12deg);line-height:1}
+
+.social-led{isolation:isolate;overflow:visible!important;border:1px solid transparent!important}
+.social-led:before{
+ content:"";position:absolute;inset:-1.5px;border-radius:inherit;padding:1.5px;
+ background:conic-gradient(from var(--social-led-angle,0deg),
+  #ff4d6d 0deg,#ffb347 48deg,#f9f871 92deg,#55efc4 138deg,
+  #48dbfb 184deg,#5f8cff 230deg,#b56bff 276deg,#ff6bd6 320deg,#ff4d6d 360deg);
+ -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+ -webkit-mask-composite:xor;mask-composite:exclude;
+ animation:socialLedLoop 6s linear infinite;
+ filter:drop-shadow(0 0 5px #ff6bd677) drop-shadow(0 0 12px #55efc455);
+ pointer-events:none;z-index:2
+}
+.social-led:after{
+ content:"";position:absolute;inset:-7px;border-radius:inherit;
+ box-shadow:0 0 20px #ff6bd622,0 0 34px #48dbfb1c;
+ pointer-events:none;z-index:-1
+}
+@property --social-led-angle{syntax:"<angle>";initial-value:0deg;inherits:false}
+@keyframes socialLedLoop{to{--social-led-angle:360deg}}
+
+.btn.whatsapp{color:#042b1a;border:1px solid #8fffc0a8;background:linear-gradient(105deg,#20c96b,#13b95e 55%,#08a94e);box-shadow:0 8px 26px #13c86b45,inset 0 1px 0 #eafff5b8,inset 0 -2px 8px #006b3433}
+.btn.whatsapp-copy{color:#d9ffea;border-color:#5be69a70;background:linear-gradient(145deg,#159b5c45,#087d4930);box-shadow:inset 0 1px 0 #ffffff2b,0 8px 22px #001b1230}
+.amount-display{font-size:clamp(52px,12vw,82px);font-weight:950;letter-spacing:-4px;line-height:1;margin:10px 0 3px}
+.amount-display small{font-size:27px;letter-spacing:-1px;color:#a7cbd6}
+.amount-caption{font-size:11px;letter-spacing:2.5px;color:#7deafa;font-weight:950}
+.range{width:100%;accent-color:#8df4ff;margin:26px 0 8px;height:10px;cursor:pointer;touch-action:pan-y;-webkit-appearance:none;appearance:none;background:linear-gradient(90deg,#70eafa,#a9a5ff);border-radius:999px;outline:none}
+.range::-webkit-slider-runnable-track{height:10px;border-radius:999px;background:linear-gradient(90deg,#72efff,#9b9dff);box-shadow:inset 0 1px 3px #00152255,0 0 12px #6ceaff35}
+.range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:29px;height:29px;margin-top:-9.5px;border-radius:50%;border:2px solid #ffffffd9;background:radial-gradient(circle at 32% 25%,#fff 0 17%,#e9fcff 38%,#b7d9ed 72%,#8daecb 100%);box-shadow:0 0 0 5px #8cefff25,0 4px 14px #0008,inset 0 2px 4px #fff;}
+.range-labels{display:flex;justify-content:space-between;font-size:11px;color:#9cbcc8;font-weight:800}
+.preset-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.preset{border:1px solid #e1fbff27;background:#dffaff0b;border-radius:20px;padding:16px;color:#effcff;text-align:left;cursor:pointer;backdrop-filter:blur(18px);box-shadow:inset 0 1px 0 #ffffff13;transition:.2s}
+.preset span{display:block;color:#a9cbd5;font-size:12px;font-weight:700}
+.preset b{display:block;font-size:22px;margin-top:5px}
+.preset.active{border-color:#8af1ff9c;background:linear-gradient(135deg,#8aefff25,#9d9dff19);box-shadow:0 0 24px #68e8ff18,inset 0 1px 0 #fff3}
+.steps{display:grid;gap:12px}.step{display:flex;gap:12px;align-items:flex-start}
+.step-num{width:32px;height:32px;flex:0 0 32px;border-radius:50%;display:grid;place-items:center;color:#072536;background:linear-gradient(145deg,#a9fbff,#9db2ff);font-weight:950}
+.step p{margin:2px 0 0;color:#afcbd5;font-size:13px}
+.footer{text-align:center;color:#8fb4c1;font-size:11px;margin:32px 0 0}
+.dock{
+ position:fixed;z-index:8;left:50%;transform:translateX(-50%);bottom:calc(13px + env(safe-area-inset-bottom));
+ width:min(340px,calc(100% - 70px));display:flex;align-items:center;gap:0;padding:5px;isolation:isolate;
+ background:linear-gradient(135deg,#d8faff20,#a6cfff0d 55%,#e6dcff16);
+ border:1px solid #e4fbff45;border-radius:36px;box-shadow:0 16px 48px #020b1685,inset 0 1px 0 #ffffff55,inset 0 -1px 0 #ffffff12;
+ backdrop-filter:blur(34px) saturate(190%);-webkit-backdrop-filter:blur(34px) saturate(190%);
+ touch-action:pan-y;overflow:visible
+}
+.dock:before{
+ content:"";position:absolute;inset:-1.5px;border-radius:inherit;padding:1.5px;z-index:3;pointer-events:none;
+ background:conic-gradient(from var(--dock-led-angle,0deg),
+ #ff4d6d,#ffb347,#f9f871,#55efc4,#48dbfb,#5f8cff,#b56bff,#ff6bd6,#ff4d6d);
+ -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+ -webkit-mask-composite:xor;mask-composite:exclude;
+ filter:drop-shadow(0 0 4px #ff6bd688) drop-shadow(0 0 10px #48dbfb55);
+ animation:dockLedLoop 5.5s linear infinite
+}
+.dock:after{
+ content:"";position:absolute;inset:-7px;border-radius:inherit;z-index:-1;pointer-events:none;
+ box-shadow:0 0 18px #ff6bd633,0 0 30px #48dbfb22
+}
+@property --dock-led-angle{syntax:"<angle>";initial-value:0deg;inherits:false}
+@keyframes dockLedLoop{to{--dock-led-angle:360deg}}
+.dock-bubble{position:absolute;z-index:-1;left:0;top:7px;bottom:7px;width:calc((100% - 54px)/4);border-radius:26px;
+ background:radial-gradient(ellipse at 25% 12%,#ffffffa8 0,transparent 34%),radial-gradient(ellipse at 70% 90%,#a8baff75 0,transparent 48%),linear-gradient(135deg,#9af5ff55,#9ccaff38 52%,#c6b4ff55);
+ border:1px solid #e8fdff9c;box-shadow:0 5px 24px #68eaff42,inset 0 1px 2px #ffffffb8,inset 0 -8px 18px #9adfff24;
+ backdrop-filter:blur(24px) saturate(210%);-webkit-backdrop-filter:blur(24px) saturate(210%);
+ transform:translateX(0);transition:transform .42s cubic-bezier(.22,.75,.25,1),filter .25s;pointer-events:none;will-change:transform}
+.dock-bubble:before{content:"";position:absolute;inset:2px;border-radius:inherit;background:linear-gradient(115deg,#ffffff40,transparent 38%,#b9f5ff20 70%,#ffffff35);opacity:.85}
+.dock-bubble:after{content:"";position:absolute;width:42%;height:35%;left:12%;top:5%;border-radius:50%;background:#fff8;filter:blur(13px);transform:rotate(-22deg)}
+.dock.dragging .dock-bubble{transition:filter .12s;filter:brightness(1.18) saturate(1.3)}
+.dock a{position:relative;z-index:1;flex:1;min-width:0;text-decoration:none;color:#c0dce5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:8px 2px;border-radius:28px;font-size:10px;font-weight:850;transition:color .25s,transform .25s;user-select:none;-webkit-user-select:none}
+.dock a .ico{width:27px;height:27px;display:grid;place-items:center;line-height:1;filter:drop-shadow(0 1px 2px #001a2a55)}.dock a .ico svg{width:26px;height:26px;display:block;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}.dock a.active{color:#062638;text-shadow:0 1px 0 #ffffff70}.dock a:active{transform:scale(.97)}
+.ripple{position:absolute;border-radius:50%;pointer-events:none;z-index:5;transform:scale(0);background:radial-gradient(circle,#fff9 0%,#bdfaff8c 18%,#8bdfff35 48%,transparent 72%);animation:ripple .72s ease-out forwards}
+@keyframes ripple{to{transform:scale(1);opacity:0}}
+.glow-flash{position:fixed;inset:0;pointer-events:none;z-index:7;background:radial-gradient(circle at var(--x,50%) var(--y,50%),#a7faff35,transparent 24%);animation:flash .55s ease-out forwards}
+@keyframes flash{to{opacity:0}}
+.modal{display:none;position:fixed;inset:0;z-index:20;background:#020b16c9;backdrop-filter:blur(20px);padding:20px;place-items:center}
+.modal.open{display:grid}
+/* Liquid Glass + RGB LED untuk panel audio */
+.dialog{
+  position:relative;isolation:isolate;
+  width:min(480px,100%);max-height:88vh;overflow:auto;
+  border-radius:27px;padding:22px;
+  border:1px solid rgba(220,250,255,.32);
+  background:
+    radial-gradient(ellipse at 12% 0%,rgba(190,250,255,.20),transparent 42%),
+    radial-gradient(ellipse at 100% 100%,rgba(153,164,255,.18),transparent 48%),
+    linear-gradient(145deg,rgba(218,249,255,.17),rgba(160,211,255,.075) 48%,rgba(255,255,255,.10));
+  -webkit-backdrop-filter:blur(30px) saturate(185%);
+  backdrop-filter:blur(30px) saturate(185%);
+  box-shadow:0 25px 80px #000a,0 0 25px rgba(88,226,255,.13),
+    0 0 48px rgba(174,111,255,.10),
+    inset 0 1px 0 rgba(255,255,255,.48),
+    inset 0 -1px 0 rgba(197,248,255,.16);
+}
+.dialog:before{
+  content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;
+  background:conic-gradient(from var(--dialog-led-angle,0deg),
+    #ff4d6d 0deg,#ffb347 48deg,#f9f871 92deg,#55efc4 138deg,
+    #48dbfb 184deg,#5f8cff 230deg,#b56bff 276deg,#ff6bd6 320deg,#ff4d6d 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  filter:drop-shadow(0 0 5px #ff6bd688) drop-shadow(0 0 13px #48dbfb55);
+  pointer-events:none;z-index:0;
+  animation:dialogLedLoop 5s linear infinite;
+}
+.dialog:after{
+  content:"";position:absolute;inset:1px;border-radius:26px;
+  background:linear-gradient(125deg,rgba(255,255,255,.16),transparent 28%,transparent 68%,rgba(180,230,255,.08));
+  pointer-events:none;z-index:0;
+}
+.dialog>*{position:relative;z-index:1}
+
+/* Premium Play / Pause icon */
+.audio-control-content{display:inline-flex;align-items:center;justify-content:center;gap:11px}
+.audio-icon{
+  width:34px;height:34px;flex:0 0 34px;display:inline-grid;place-items:center;
+  border-radius:50%;color:#062638;
+  background:linear-gradient(145deg,rgba(255,255,255,.92),rgba(190,239,255,.72));
+  border:1px solid rgba(255,255,255,.8);
+  box-shadow:0 3px 12px rgba(4,35,58,.22),inset 0 1px 2px #fff;
+}
+.audio-icon svg{width:18px;height:18px;display:block;overflow:visible}
+.audio-icon svg path{stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}
+#playPauseAudioBtn{letter-spacing:.1px}
+#playPauseAudioBtn .audio-icon{transition:transform .22s ease,box-shadow .22s ease}
+#playPauseAudioBtn:active .audio-icon{transform:scale(.9);box-shadow:0 0 18px rgba(255,255,255,.65)}
+@property --dialog-led-angle{syntax:"<angle>";initial-value:0deg;inherits:false}
+@keyframes dialogLedLoop{to{--dialog-led-angle:360deg}}
+.dialog h2{margin:0 0 15px}.dialog label{display:block;color:#a9d0dc;font-size:12px;font-weight:800;margin:13px 0 5px}
+.dialog input{width:100%;padding:13px 14px;border-radius:13px;border:1px solid #dffaff35;background:#e9fbff10;color:#fff;font:inherit;outline:none}
+.dialog input:focus{border-color:#80efff;box-shadow:0 0 0 3px #72eaff20}
+.dialog-actions{display:flex;gap:10px;margin-top:19px}.dialog-actions .btn{flex:1}
+.bigqr{width:min(85vw,430px);background:white;border-radius:22px;padding:14px}
+@media(max-width:480px){
+ .wrap{padding:19px 13px calc(122px + env(safe-area-inset-bottom))}
+ .topbar{margin-bottom:27px}.hero h1{letter-spacing:-2.5px}.hero p{font-size:15px}
+ .glass{padding:17px;border-radius:25px}.qr-paper{padding:10px;border-radius:19px}
+ .qr-top span{font-size:9px;letter-spacing:1.8px}.qr-top strong{font-size:19px}
+ .merchant strong{font-size:24px}.actions{gap:9px}.actions .btn{font-size:13px;padding:12px 8px}
+ .download-grid{grid-template-columns:1fr}.dock{width:min(340px,calc(100% - 70px))}.dock a{min-width:0;padding:8px 2px}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+
+/* Quran reader */
+.quran-card{margin-top:18px}
+.quran-intro{color:#bed9e2;margin:5px 0 16px;font-size:13px}
+.quran-tools{display:grid;grid-template-columns:1fr;gap:10px;margin:14px 0}
+.quran-tools input,.quran-tools select{width:100%;min-width:0;padding:13px 14px;border-radius:14px;border:1px solid #dffaff35;background:#09283b;color:#effcff;font:inherit;outline:none}
+.quran-tools input::placeholder{color:#a9c9d5}
+.quran-tools select option{background:#09283b;color:#effcff}
+.quran-status{font-size:12px;color:#a9d5e1;margin:10px 2px}
+.quran-list{display:grid;gap:8px;max-height:370px;overflow:auto;padding:2px}
+.quran-surah{width:100%;display:flex;align-items:center;gap:12px;text-align:left;padding:12px;border:1px solid #dffaff25;border-radius:16px;background:#dffaff0b;color:#effcff;cursor:pointer}
+.quran-surah.active{border-color:#7deafa;background:#69e7f41c}
+.quran-number{width:34px;height:34px;flex:0 0 34px;border-radius:12px;display:grid;place-items:center;background:#8cefff20;color:#a8faff;font-weight:900}
+.quran-surah b{display:block;font-size:14px}
+.quran-surah small{display:block;color:#a9c9d5;font-size:11px}
+.quran-surah .arabic-name{margin-left:auto;font-family:serif;font-size:20px;direction:rtl}
+.quran-reader{margin-top:16px}
+.quran-reader-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.quran-reader-head h3{margin:0;font-size:22px}
+.quran-reader-head p{margin:3px 0 0;color:#a9c9d5;font-size:12px}
+.quran-verse{padding:17px 4px;border-bottom:1px solid #dffaff20}
+.quran-verse:last-child{border-bottom:0}
+.quran-verse-top{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.quran-verse-num{font-size:11px;color:#a4faff;border:1px solid #69e7f455;border-radius:20px;padding:4px 9px}
+.quran-arabic{font-family:"Noto Naskh Arabic","Amiri",serif;font-size:clamp(25px,6vw,34px);line-height:2.05;text-align:right;direction:rtl;color:#f5fdff;margin:8px 0 13px;overflow-wrap:anywhere}
+.quran-translation{font-size:14px;line-height:1.8;color:#c6dfe7}
+.quran-loading{text-align:center;padding:24px;color:#b8d7e2}
+.quran-small-btn{min-height:38px;padding:8px 12px;font-size:12px}
+@media(min-width:600px){.quran-tools{grid-template-columns:1fr 1fr}.quran-tools input{grid-column:1/-1}}
+
+
+.quran-audio-card{padding:15px;margin:14px 0 18px;border:1px solid #70e7f04a;border-radius:18px;background:linear-gradient(135deg,#0d4052aa,#071e31dd);box-shadow:0 12px 32px #00101c55}
+.quran-audio-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.quran-audio-icon{width:40px;height:40px;display:grid;place-items:center;border-radius:14px;background:#8cefff20;font-size:20px}
+.quran-audio-title{font-weight:800;color:#e9fcff}
+.quran-audio-sub{font-size:11px;color:#a9c9d5;margin-top:2px}
+.quran-audio-controls{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.quran-qari-picker{position:relative;flex:1;min-width:170px}
+.quran-qari-trigger{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border-radius:16px;border:1px solid #c7f8ff55;background:linear-gradient(135deg,#ffffff20,#a6efff0b 55%,#ffffff12);backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);box-shadow:inset 0 1px 0 #ffffff35,0 8px 24px #00101c45;color:#effcff;font:inherit;font-size:13px;font-weight:700;text-align:left;cursor:pointer}
+.quran-qari-trigger .qari-chevron{opacity:.8;transition:transform .2s}
+.quran-qari-picker.open .qari-chevron{transform:rotate(180deg)}
+.quran-qari-menu{display:none;position:fixed;z-index:99999;left:12px;right:auto;top:12px;width:min(360px,calc(100vw - 24px));padding:7px;border:1px solid #c9f7ff70;border-radius:19px;background:linear-gradient(145deg,rgba(12,39,59,.99),rgba(8,22,46,.99));backdrop-filter:blur(28px) saturate(180%);-webkit-backdrop-filter:blur(28px) saturate(180%);box-shadow:0 22px 55px #000b,inset 0 1px 0 #ffffff28;max-height:min(58vh,390px);overflow:auto;overscroll-behavior:contain}
+.quran-qari-picker.open .quran-qari-menu{display:block}
+.quran-qari-option{width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 11px;border:0;border-radius:12px;background:transparent;color:#eafaff;font:inherit;font-size:13px;text-align:left;cursor:pointer}
+.quran-qari-option+.quran-qari-option{border-top:1px solid #d9f8ff16}
+.quran-qari-option.active{background:linear-gradient(100deg,#78eaff28,#b4c5ff20);color:#fff}
+.quran-qari-option .qari-check{color:#8fffd0;font-size:16px;opacity:0}
+.quran-qari-option.active .qari-check{opacity:1}
+.quran-audio-stop{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:43px;padding:10px 15px;border-radius:15px;border:1px solid #c5f8ff42;background:linear-gradient(135deg,#ffffff1b,#a9efff0a);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:inset 0 1px 0 #ffffff2a,0 7px 18px #00101c35;color:#eaffff;font:inherit;font-size:12px;font-weight:750;cursor:pointer}
+.quran-audio-stop:active,.quran-qari-trigger:active{transform:scale(.98)}
+.quran-latin{font-size:14px;line-height:1.9;color:#b7edf3;font-style:italic;letter-spacing:.1px;margin:0 0 11px;padding:0 1px}.quran-latin:before{content:"Latin: ";font-style:normal;font-weight:800;color:#7bdce9}
+.quran-audio-card audio{width:100%;height:42px;margin-top:10px;accent-color:#71e8f2}
+.quran-audio-note{font-size:11px;color:#a9c9d5;margin-top:7px}
+
+
+
+/* Premium Al-Qur'an entry + dedicated reader page */
+.quran-entry-btn{
+  min-height:66px!important;gap:13px!important;
+  border:1px solid rgba(170,245,255,.58)!important;
+  background:linear-gradient(112deg,rgba(23,105,132,.88),rgba(32,74,137,.92) 58%,rgba(79,77,150,.9))!important;
+  color:#f2fdff!important;font-size:16px!important;letter-spacing:.1px;
+  box-shadow:0 12px 32px rgba(0,9,25,.28),0 0 24px rgba(91,221,245,.16),inset 0 1px 0 rgba(255,255,255,.28)!important;
+}
+.quran-entry-icon{
+  width:38px;height:38px;display:grid;place-items:center;flex:0 0 38px;
+  border-radius:13px;color:#a9f6ff;
+  background:linear-gradient(145deg,rgba(181,250,255,.2),rgba(115,161,255,.13));
+  border:1px solid rgba(187,248,255,.38);
+  box-shadow:inset 0 1px 0 #ffffff55,0 0 18px #6deaff26;
+}
+.quran-entry-icon svg{width:29px;height:29px;fill:none;stroke:currentColor;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 5px #7ceeff88)}
+.quran-entry-arrow{margin-left:auto;font-size:20px;color:#c8faff;opacity:.9}
+.page-view{display:none;animation:pageReveal .38s ease both}
+.page-view.active{display:block}
+@keyframes pageReveal{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+.quran-page-header{
+ display:flex;align-items:center;justify-content:space-between;gap:14px;
+ padding:4px 2px 19px;margin-bottom:8px;border-bottom:1px solid #dffaff20;
+}
+.quran-back-btn{min-height:43px;padding:9px 14px;font-size:12px;white-space:nowrap}
+.quran-page-brand{display:flex;align-items:center;gap:10px;text-align:right}
+.quran-brand-icon{
+ width:39px;height:39px;display:grid;place-items:center;border-radius:14px;
+ color:#b5f8ff;font-size:25px;border:1px solid #a7f4ff4d;
+ background:linear-gradient(145deg,#8defff25,#a6a2ff20);
+ box-shadow:0 0 18px #69e7f426,inset 0 1px 0 #ffffff38;
+}
+.quran-page-brand b{display:block;font-size:11px;letter-spacing:2px;color:#dffaff}
+.quran-page-brand small{display:block;font-size:8px;letter-spacing:1.2px;color:#9fc6d4;margin-top:2px}
+#quranPage .quran-card{margin-top:8px}
+#quranPage .quran-list{max-height:48vh;padding:3px}
+#quranPage .quran-surah{padding:14px;border-radius:17px;background:linear-gradient(120deg,#dffaff12,#a9caff0b);transition:.2s}
+#quranPage .quran-surah:active{transform:scale(.985)}
+#quranPage .quran-reader{scroll-margin-top:14px;margin-top:0}
+#quranPage .quran-reading-card{margin-top:18px;padding:18px;border:1px solid rgba(160,238,255,.3);background:linear-gradient(145deg,rgba(23,72,99,.78),rgba(18,39,75,.88));box-shadow:0 16px 38px rgba(0,10,28,.25),inset 0 1px 0 rgba(255,255,255,.12)}
+#quranPage .reading-panel-heading{display:flex;align-items:center;gap:11px;padding:0 0 14px;margin-bottom:14px;border-bottom:1px solid rgba(213,249,255,.14)}
+#quranPage .reading-panel-icon{width:38px;height:38px;display:grid;place-items:center;flex:0 0 38px;border-radius:13px;color:#b8f7ff;font-size:22px;background:linear-gradient(145deg,rgba(137,235,255,.2),rgba(142,157,255,.13));border:1px solid rgba(184,245,255,.3);box-shadow:0 0 18px rgba(100,225,255,.12)}
+#quranPage .reading-panel-title{font-size:11px;font-weight:850;letter-spacing:1.6px;color:#e7fbff}
+#quranPage .reading-panel-subtitle{font-size:11px;color:#a9cbd8;margin-top:3px}
+#quranPage .quran-reader-head{padding:2px 0 12px}
+#quranPage .quran-audio-card{margin-top:12px}
+#quranPage .quran-verse{padding:22px 5px}
+#quranPage .quran-arabic{line-height:2.2;font-size:clamp(28px,7vw,37px);color:#f5fdff;text-shadow:0 2px 18px #73eaff16}
+body.quran-mode #bottomDock,body.quran-mode .home-footer{display:none}
+@media(max-width:480px){
+ .quran-entry-btn{font-size:14px!important;min-height:62px!important}
+ .quran-page-header{align-items:flex-start}
+ .quran-page-brand{gap:7px}
+ .quran-page-brand b{font-size:10px}
+ .quran-page-brand small{font-size:7px}
+}
+
+</style>
+</head>
+<body>
+<main class="wrap">
+<div class="page-view active" id="homePage">
+<header class="topbar">
+ <div class="brand"><span class="brandmark"><img src="https://c.termai.cc/i111/Al2r.jpg" alt="TanzMty logo"></span><span>TanzMtyz<small>A Q U A&nbsp; S U P P O R T</small></span></div>
+ <div class="status">◉ &nbsp; SUPPORT PAGE</div>
+</header>
+
+<section class="hero" id="scan">
+ <div class="islamic-header-ornament">
+  <span class="star">✦</span> ☪ <span class="star">✦</span>
+ </div>
+ <div class="islamic-badge"><span class="crescent">☪</span><span>بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span></div>
+ <div class="eyebrow">CARE & SUPPORT CENTER</div>
+ <h1>A Little Support<br><span>A Big Meaning</span></h1>
+ <p>Terus berbagi kebaikan Semoga Allah menggantinya dengan berlipat ganda dan terima kasih sudah tulus mensupport kamii</p>
+ <div class="pills"><span>Support me</span><span>sincerely</span><span>Seikhlasnya</span></div>
+  <a class="btn full quran-entry-btn" href="#quran" style="margin-top:15px">
+   <span class="quran-entry-icon" aria-hidden="true">
+    <svg viewBox="0 0 32 32" role="img">
+     <path d="M16 8.2C12.5 5.9 7.8 5.5 3.8 7v17c4.5-1.5 8.7-1 12.2 1.8 3.5-2.8 7.7-3.3 12.2-1.8V7c-4-1.5-8.7-1.1-12.2 1.2Z"/>
+     <path d="M16 8.4v17.2M7.2 11.2c2.1-.5 4.2-.2 6.1.8M24.8 11.2c-2.1-.5-4.2-.2-6.1.8M7.2 15c2.1-.4 4.2-.1 6.1.8M24.8 15c-2.1-.4-4.2-.1-6.1.8"/>
+     <path d="m13 4.6 3-2 3 2"/>
+    </svg>
+   </span>
+   <span>Baca Al-Qur'an 114 Surah</span>
+   <span class="quran-entry-arrow" aria-hidden="true">↗</span>
+  </a>
+</section>
+
+<section class="glass qr-card">
+ <div class="qr-top"><strong>QRIS PAYMENT</strong><span>SCAN UNTUK BAYAR</span></div>
+ <div class="qr-paper">
+  <div class="qr-frame" id="qrFrame">
+   <img class="qr-img" id="qrImage" src="https://c.termai.cc/i198/Uq8X.jpg" alt="QRIS TanzMty">
+  </div>
+ </div>
+ <div class="merchant"><label>PEMILIK TOKO</label><strong id="merchantName">TanzMtyz Store</strong><p>Pastikan nama merchant sesuai di atas</p></div>
+ <button class="btn primary full" id="fullscreenBtn"><span class="sym">⛶</span> Tampilkan layar penuh</button>
+ <div class="actions"><button class="btn" id="downloadBtn"><span class="sym">↓</span> Install QRIS</button><button class="btn" id="shareBtn"><span class="sym">↗</span> Bagikan</button></div>
+</section>
+
+<div class="section-title">PLATFORM SOCIAL MEDIA</div>
+<section class="glass social-led">
+ <div class="social-row"><div class="social-icon" style="overflow:hidden;border-radius:18px;"><img src="https://c.termai.cc/i111/Al2r.jpg" alt="WhatsApp Channel" style="width:100%;height:100%;object-fit:cover;display:block;"></div><div><div class="kicker">WHATSAPP CHANNEL</div><h3>Info TanzMty Dev</h3><p>Join saluran resmi kami</p></div></div>
+ <div class="social-actions"><a class="btn whatsapp" id="channelLink" href="#" target="_blank"><svg class="wa-mark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 15.0L2 22l5.18-1.36A10 10 0 1 0 12.04 2Zm0 18.2a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.08.81.82-3-.2-.31A8.2 8.2 0 1 1 12.04 20.2Zm4.5-6.14c-.25-.13-1.48-.73-1.71-.81-.23-.08-.4-.13-.57.13-.17.25-.65.81-.8.98-.15.17-.3.19-.55.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.25-1.49-1.4-1.74-.15-.25-.02-.39.11-.52.11-.11.25-.3.38-.44.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.57-1.37-.78-1.87-.2-.49-.41-.42-.57-.43h-.49c-.17 0-.45.06-.68.32-.23.25-.89.87-.89 2.12s.91 2.46 1.04 2.63c.13.17 1.79 2.73 4.34 3.83.61.26 1.09.42 1.46.54.61.19 1.16.16 1.6.1.49-.07 1.48-.61 1.69-1.2.21-.59.21-1.1.15-1.2-.06-.1-.23-.16-.48-.29Z"/></svg><span>Gabung saluran</span></a><button class="btn whatsapp-copy" id="copyChannel">Salin link</button></div>
+</section>
+
+<section class="glass social-led admin-wa-card" aria-label="WhatsApp Admin">
+ <div class="social-row">
+  <div class="social-icon" aria-hidden="true">
+   <svg class="admin-wa-mark" viewBox="0 0 32 32" aria-hidden="true">
+    <path fill="currentColor" d="M16.02 3.1A12.65 12.65 0 0 0 5.1 22.12L3.45 28.1l6.13-1.61A12.66 12.66 0 1 0 16.02 3.1Zm0 22.98c-1.9 0-3.77-.5-5.4-1.46l-.39-.23-3.64.96.98-3.55-.25-.4a10.45 10.45 0 1 1 8.7 4.68Zm5.74-7.82c-.31-.16-1.84-.91-2.13-1.01-.29-.11-.5-.16-.71.16-.21.31-.81 1.01-.99 1.22-.18.21-.36.24-.67.08-.31-.16-1.31-.48-2.49-1.53-.92-.82-1.54-1.84-1.72-2.15-.18-.31-.02-.48.14-.64.14-.14.31-.36.47-.54.16-.18.21-.31.31-.52.1-.21.05-.39-.03-.55-.08-.16-.71-1.71-.97-2.34-.25-.61-.51-.53-.71-.54l-.6-.01c-.21 0-.55.08-.84.39-.29.31-1.1 1.07-1.1 2.61s1.13 3.03 1.29 3.24c.16.21 2.22 3.39 5.37 4.75.75.32 1.34.52 1.8.66.76.24 1.45.2 1.99.12.61-.09 1.84-.75 2.1-1.48.26-.73.26-1.35.18-1.48-.08-.13-.29-.21-.6-.37Z"/>
+   </svg>
+  </div>
+  <div><div class="kicker">WHATSAPP ADMIN</div><h3>Admin TanzMty Official</h3><p>Hubungi admin kami langsung melalui WhatsApp.</p></div>
+ </div>
+ <div class="admin-wa-actions">
+  <a class="btn admin-wa-chat" id="adminWhatsAppChat" href="#" target="_blank" rel="noopener">
+   <svg class="wa-mark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 15L2 22l5.18-1.36A10 10 0 1 0 12.04 2Zm0 18.2a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.08.81.82-3-.2-.31A8.2 8.2 0 1 1 12.04 20.2Zm4.5-6.14c-.25-.13-1.48-.73-1.71-.81-.23-.08-.4-.13-.57.13-.17.25-.65.81-.8.98-.15.17-.3.19-.55.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.25-1.49-1.4-1.74-.15-.25-.02-.39.11-.52.11-.11.25-.3.38-.44.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.57-1.37-.78-1.87-.2-.49-.41-.42-.57-.43h-.49c-.17 0-.45.06-.68.32-.23.25-.89.87-.89 2.12s.91 2.46 1.04 2.63c.13.17 1.79 2.73 4.34 3.83.61.26 1.09.42 1.46.54.61.19 1.16.16 1.6.1.49-.07 1.48-.61 1.69-1.2.21-.59.21-1.1.15-1.2-.06-.1-.23-.16-.48-.29Z"/></svg>
+   <span>Chat WhatsApp Admin</span>
+  </a>
+  <button class="btn admin-wa-copy" id="copyAdminPhone" type="button">Salin Nomor</button>
+ </div>
+</section>
+<section class="glass social-led">
+ <div class="social-row">
+  <div class="social-icon" style="overflow:hidden;border-radius:18px;">
+   <img src="https://c.termai.cc/i143/qii.jpg" alt="Account Telegram" style="width:100%;height:100%;object-fit:cover;display:block;">
+  </div>
+  <div><div class="kicker">TELEGRAM ACCOUNT</div><h3>Account Telegram</h3><p>Temukan dan hubungi akun Telegram TanzMty.</p></div>
+ </div>
+ <a class="btn full telegram-btn" href="https://t.me/TanzMty" target="_blank" rel="noopener">
+  <span class="telegram-plane" aria-hidden="true">➤</span><span>Buka Telegram</span>
+ </a>
+</section>
+<section class="glass social-led">
+ <div class="social-row"><div class="social-icon" style="overflow:hidden;border-radius:18px;"><img src="https://c.termai.cc/i123/IDNtO.jpg" alt="TikTok" style="width:100%;height:100%;object-fit:cover;display:block;"></div><div><div class="kicker">TIKTOK</div><h3 id="tiktokName">@tanzmtystore</h3><p>Ikuti konten dan update TanzMty terbaru.</p></div></div>
+ <a class="btn full tiktok-btn" id="tiktokLink" href="#" target="_blank" rel="noopener"><svg class="tiktok-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.08 2.7 1.59 4.21 1.75v4.03c-1.41-.05-2.83-.34-4.12-.96-.56-.26-1.08-.59-1.6-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.36 3.93-1.32 1.92-3.62 3.18-5.95 3.22-1.43.08-2.86-.31-4.07-1.08-2.01-1.28-3.38-3.59-3.42-5.99-.03-1.49.37-2.99 1.16-4.26 1.28-2.09 3.64-3.46 6.1-3.5.23-.02.46-.02.69-.01.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.38-.64.42-1.12 1.09-1.27 1.84-.13.75.05 1.56.52 2.16.77 1.04 2.34 1.35 3.44.67.72-.44 1.2-1.25 1.22-2.1.05-3.77.02-7.55.03-11.32 0-.05.01-.1.02-.15z"/></svg><span>Follow sekarang</span></a>
+</section>
+
+<section class="glass social-led">
+ <div class="social-row">
+  <div class="social-icon" style="overflow:hidden;border-radius:18px;">
+   <img src="https://c.termai.cc/i129/NaZUCR.jpg" alt="Bot Alight Premium" style="width:100%;height:100%;object-fit:cover;display:block;">
+  </div>
+  <div><div class="kicker">TELEGRAM BOT</div><h3>Bot Alight Premium</h3><p>Akses bot Alight Premium dengan mudah dan cepat.</p></div>
+ </div>
+ <a class="btn full telegram-btn" id="alightBotLink" href="https://t.me/tanzmtystore_bot" target="_blank" rel="noopener">
+  <span class="telegram-plane" aria-hidden="true">➤</span><span>Buka Bot Sekarang</span>
+ </a>
+</section>
+
+<div class="section-title" id="nominal">PILIH NILAI DUKUNGAN</div>
+<section class="glass">
+ <div class="kicker">KONTRIBUSI SUKARELA</div>
+ <div class="amount-display" id="amountDisplay"><small>Rp</small>10.000</div>
+ <div class="amount-caption" id="amountCaption">Buat makan siang</div>
+ <input class="range" id="amountRange" type="range" min="1000" max="100000" step="1000" value="10000">
+ <div class="range-labels"><span>Rp1.000</span><span>Rp50.000</span><span>Rp100.000</span></div>
+ <button class="btn primary full" id="copyAmount">Salin nominal dukungan</button>
+</section>
+<div class="preset-grid">
+ <button class="preset" data-amount="5000"><span>Jajan kecil</span><b>Rp5.000</b></button>
+ <button class="preset active" data-amount="10000"><span>Makan naspad</span><b>Rp10.000</b></button>
+ <button class="preset" data-amount="20000"><span>Ngopi + Makan</span><b>Rp20.000</b></button>
+ <button class="preset" data-amount="50000"><span>Thankss pokoknya</span><b>Rp50.000</b></button>
+</div>
+
+<div class="section-title">CARA MELAKUKAN PEMBAYARAN</div>
+<section class="glass">
+ <div class="steps">
+  <div class="step"><span class="step-num">1</span><div><b>Buka e-wallet kalian</b><p>Pilih aplikasi pembayaran yang mendukung QRIS.</p></div></div>
+  <div class="step"><span class="step-num">2</span><div><b>Scan kode QRIS</b><p>Arahkan kamera ke kode QR pada bagian atas halaman.</p></div></div>
+  <div class="step"><span class="step-num">3</span><div><b>Periksa nama merchant dan nominal</b><p>Pastikan detail pembayaran benar sebelum konfirmasi.</p></div></div>
+ </div>
+</section>
+<section class="glass" id="helpSection">
+ <div class="kicker">NEED HELP?</div><h2 style="margin:5px 0 4px">Mau konfirmasi ke admin?</h2>
+ <p style="color:#afcbd5;margin:0">Kirim pesan ke admin jika kamu ingin mengonfirmasi dukungan.</p>
+ <input id="donorName" placeholder="Nama kamu (opsional)" style="width:100%;margin-top:13px;padding:13px 14px;border-radius:13px;border:1px solid #dffaff35;background:#e9fbff10;color:#fff;font:inherit">
+ <button class="btn primary full" id="contactAdmin">Hubungi admin ↗</button>
+</section>
+
+</div><!-- /homePage -->
+
+<div class="page-view" id="quranPage">
+ <header class="quran-page-header">
+  <a class="btn quran-back-btn" href="#home" aria-label="Kembali ke halaman utama"><span aria-hidden="true">←</span> Kembali</a>
+  <div class="quran-page-brand"><span class="quran-brand-icon" aria-hidden="true">۞</span><span><b>AL-QUR'AN DIGITAL</b><small>114 SURAH · TILAWAH & TERJEMAHAN</small></span></div>
+ </header>
+ <section id="quranSection" class="glass quran-card">
+ <div class="kicker">AL-QUR'AN DIGITAL</div>
+ <h2 style="margin:5px 0 0">الْقُرْآنُ الْكَرِيمُ</h2>
+ <p class="quran-intro">114 surah lengkap dengan teks Arab dan terjemahan bahasa Indonesia. Pilih surah untuk mulai membaca.</p>
+ <div class="quran-tools">
+  <input id="quranSearch" type="search" placeholder="Cari nama surah...">
+  <select id="quranSurahSelect" aria-label="Pilih surah"><option value="">Memuat daftar surah...</option></select>
+ </div>
+ <div id="quranStatus" class="quran-status" role="status">Menghubungkan ke sumber data Al-Qur'an...</div>
+ <div id="quranSurahList" class="quran-list" aria-label="Daftar 114 surah"></div>
+ <p class="quran-status">Sumber teks Arab dan terjemahan Indonesia: EQuran.id, bersumber dari Kementerian Agama Republik Indonesia. Koneksi internet diperlukan untuk memuat data.</p>
+</section>
+ <section class="glass quran-reading-card" aria-label="Panel bacaan Al-Qur'an">
+  <div class="reading-panel-heading"><span class="reading-panel-icon" aria-hidden="true">۞</span><div><div class="reading-panel-title">RUANG BACA AL-QUR'AN</div><div class="reading-panel-subtitle">Tilawah · Latin · Terjemahan</div></div></div>
+  <div id="quranReader" class="quran-reader">
+   <div class="quran-loading">Pilih salah satu surah untuk menampilkan ayat.</div>
+  </div>
+ </section>
+ <footer class="footer">Made of good vibes & water light · TanzMty Dev</footer>
+</div><!-- /quranPage -->
+
+<footer class="footer home-footer">Made of good vibes & water light · TanzMty Dev</footer>
+</main>
+
+<nav class="dock" id="bottomDock">
+ <span class="dock-bubble" id="dockBubble" aria-hidden="true"></span>
+ <a class="active" href="#scan" aria-label="Scan"><span class="ico"><svg viewBox="0 0 24 24"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><rect x="8" y="8" width="8" height="8" rx="1"/><path d="M10 10h1v1h-1zM13 13h1v1h-1z"/></svg></span>Scan</a>
+ <a href="#nominal" aria-label="Nominal"><span class="ico"><svg viewBox="0 0 24 24"><path d="M20.8 8.8c0 4.2-8.8 11-8.8 11s-8.8-6.8-8.8-11A4.8 4.8 0 0 1 12 6.1a4.8 4.8 0 0 1 8.8 2.7Z"/></svg></span>Nominal</a>
+ <a href="#helpSection" aria-label="Admin"><span class="ico"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-8.8 8.4 9.5 9.5 0 0 1-4-.9L3 21l1.7-4.7a8.1 8.1 0 0 1-1.5-4.8A8.5 8.5 0 0 1 12 3a8.5 8.5 0 0 1 9 8.5Z"/></svg></span>Admin</a>
+ <a href="#" id="soundBtn" aria-label="Suara"><span class="ico"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></span>Sound</a>
+</nav>
+
+<div class="modal" id="qrModal"><div style="text-align:center"><button class="btn" id="closeQr" style="margin-bottom:14px">Tutup ×</button><br><img id="bigQr" class="bigqr" alt="QRIS layar penuh"><p style="color:#dffaff">Scan untuk mendukung TanzMty</p></div></div>
+
+<!-- Modal Audio Player Islami -->
+<div class="modal" id="audioModal">
+ <div class="dialog" style="text-align:center;">
+  <div style="font-size:28px;margin-bottom:8px">☪</div>
+  <h2 style="margin-bottom:5px">Menu Sound</h2>
+  <p id="audioStatusText" style="color:#a9d5e1;font-size:13px;margin-bottom:20px">Status:(Paused)</p>
+  
+  <button class="btn primary full" id="playPauseAudioBtn" style="margin-bottom:20px"><span class="audio-control-content"><span class="audio-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.8v12.4L18 12 8 5.8Z" fill="currentColor" stroke="none"/></svg></span><span>Play Sound</span></span></button>
+  
+  <div style="background:rgba(255,255,255,0.05);padding:15px;border-radius:18px;border:1px solid rgba(255,255,255,0.1)">
+   <label style="margin-bottom:8px;display:block">Settings Volume (<span id="volVal">80%</span>)</label>
+   <div style="display:flex;align-items:center;gap:10px;">
+    <button class="btn" id="volDownBtn" style="min-height:40px;padding:8px 14px">-</button>
+    <input type="range" id="volumeRange" class="range" min="0" max="1" step="0.05" value="0.8" style="margin:0">
+    <button class="btn" id="volUpBtn" style="min-height:40px;padding:8px 14px">+</button>
+   </div>
+  </div>
+
+  <button class="btn full" id="closeAudioModal" style="margin-top:20px">Tutup Menu</button>
+ </div>
+</div>
+
+<script>
+
+const $=s=>document.querySelector(s);
+
+// Navigasi dua halaman: beranda support dan pembaca Al-Qur'an.
+function setPageFromHash(){
+ const isQuran=location.hash==='#quran';
+ document.getElementById('homePage')?.classList.toggle('active',!isQuran);
+ document.getElementById('quranPage')?.classList.toggle('active',isQuran);
+ document.body.classList.toggle('quran-mode',isQuran);
+ if(isQuran) window.scrollTo({top:0,behavior:'instant'});
+}
+window.addEventListener('hashchange',setPageFromHash);
+setPageFromHash();
+
+const CONFIG={
+ merchantName:'TanzMtyz Store',
+ tiktokUsername:'@tanzmtystore',
+ tiktokUrl:'https://www.tiktok.com/@tanzmtystore',
+ whatsappChannelUrl:'https://whatsapp.com/channel/0029VbClpa80QeapyByrH80M',
+ adminPhone:'6285138490217', // GANTI MANUAL nomor ini dengan nomor WhatsApp admin (format 628xxxxxxxxxx)
+ qrisImageUrl:'https://c.termai.cc/i106/zum.jpeg'
+};
+let qrUrl=CONFIG.qrisImageUrl, channelUrl=CONFIG.whatsappChannelUrl, adminPhone=CONFIG.adminPhone;
+$('#merchantName').textContent=CONFIG.merchantName;
+$('#tiktokName').textContent=CONFIG.tiktokUsername;
+$('#channelLink').href=CONFIG.whatsappChannelUrl||'#';
+// Ganti nomor admin secara manual pada CONFIG.adminPhone di atas.
+const adminWhatsAppUrl=adminPhone&&!String(adminPhone).includes('x')?'https://wa.me/'+String(adminPhone).replace(/\D/g,''):'';
+$('#adminWhatsAppChat').href=adminWhatsAppUrl||'#';
+$('#adminWhatsAppChat').addEventListener('click',e=>{if(!adminWhatsAppUrl){e.preventDefault();alert('Isi CONFIG.adminPhone dengan nomor WhatsApp format 628xxxxxxxxxx.')}});
+
+$('#tiktokLink').href=CONFIG.tiktokUrl||'#';
+$('#qrImage').src=CONFIG.qrisImageUrl;$('#qrImage').style.display='block';
+
+function flashAt(x,y){
+ const f=document.createElement('div');f.className='glow-flash';f.style.setProperty('--x',x+'px');f.style.setProperty('--y',y+'px');document.body.appendChild(f);setTimeout(()=>f.remove(),600);
+}
+function waterRipple(e){
+ const el=e.currentTarget,rect=el.getBoundingClientRect(),size=Math.max(rect.width,rect.height)*1.8;
+ const r=document.createElement('span');r.className='ripple';r.style.width=r.style.height=size+'px';
+ r.style.left=(e.clientX-rect.left-size/2)+'px';r.style.top=(e.clientY-rect.top-size/2)+'px';el.appendChild(r);
+ setTimeout(()=>r.remove(),800);flashAt(e.clientX,e.clientY);
+}
+document.querySelectorAll('.btn,.preset,.dock a').forEach(el=>el.addEventListener('click',waterRipple));
+
+$('#fullscreenBtn').onclick=()=>{
+ if(!qrUrl){alert('QRIS belum tersedia.');return}
+ $('#bigQr').src=qrUrl;$('#qrModal').classList.add('open');
+};
+$('#closeQr').onclick=()=>$('#qrModal').classList.remove('open');
+$('#qrModal').onclick=e=>{if(e.target===$('#qrModal'))$('#qrModal').classList.remove('open')};
+
+$('#downloadBtn').onclick=()=>{
+ if(!qrUrl){alert('QRIS belum tersedia.');return}
+ const a=document.createElement('a');a.href=qrUrl;a.download='QRIS-TanzMty.png';a.click();
+};
+
+$('#shareBtn').onclick=async()=>{
+ if(!qrUrl){alert('QRIS belum tersedia.');return}
+ try{
+  const blob=await(await fetch(qrUrl)).blob(),file=new File([blob],'QRIS-TanzMty.png',{type:blob.type});
+  if(navigator.canShare?.({files:[file]}))await navigator.share({files:[file],title:'QRIS TanzMty'});
+  else if(navigator.share)await navigator.share({title:'QRIS TanzMty',text:'Dukung TanzMty melalui QRIS.'});
+  else alert('Fitur bagikan tidak didukung browser ini.');
+ }catch(err){if(err.name!=='AbortError')alert('Gagal membagikan QRIS.')}
+};
+
+function setAmount(v){
+ v=Math.max(1000,Math.min(100000,Number(v)||1000));$('#amountRange').value=v;
+ $('#amountDisplay').innerHTML='<small>Rp</small>'+v.toLocaleString('id-ID');
+ $('#amountCaption').textContent=v>=50000?'Ngopi + Makan':v>=20000?'Naspad':v>=10000?'Sarapan':'Jajan cemilan';
+ document.querySelectorAll('.preset').forEach(b=>b.classList.toggle('active',Number(b.dataset.amount)===v));
+}
+
+const sliderNotes=[261.63,293.66,329.63,349.23,392.00,440.00,493.88,523.25];
+let sliderAudioCtx=null,lastSliderNote=-1,lastSliderToneAt=0;
+function playSliderNote(value){
+ const min=Number($('#amountRange').min),max=Number($('#amountRange').max);
+ const ratio=Math.max(0,Math.min(1,(Number(value)-min)/(max-min)));
+ const noteIndex=Math.min(7,Math.floor(ratio*8));
+ if(noteIndex===lastSliderNote)return;
+ const now=performance.now();if(now-lastSliderToneAt<42)return;
+ lastSliderNote=noteIndex;lastSliderToneAt=now;
+ try{
+  sliderAudioCtx=sliderAudioCtx||new(window.AudioContext||window.webkitAudioContext)();
+  if(sliderAudioCtx.state==='suspended')sliderAudioCtx.resume();
+  const t=sliderAudioCtx.currentTime,osc=sliderAudioCtx.createOscillator(),gain=sliderAudioCtx.createGain();
+  osc.type='sine';osc.frequency.setValueAtTime(sliderNotes[noteIndex],t);
+  gain.gain.setValueAtTime(0.0001,t);gain.gain.exponentialRampToValueAtTime(0.085,t+0.012);gain.gain.exponentialRampToValueAtTime(0.0001,t+0.19);
+  osc.connect(gain);gain.connect(sliderAudioCtx.destination);osc.start(t);osc.stop(t+0.205);
+ }catch(err){}
+}
+$('#amountRange').addEventListener('input',e=>{setAmount(e.target.value);playSliderNote(e.target.value)});
+$('#amountRange').addEventListener('pointerup',()=>{lastSliderNote=-1});
+$('#amountRange').addEventListener('touchend',()=>{lastSliderNote=-1},{passive:true});
+document.querySelectorAll('.preset').forEach(b=>b.onclick=()=>setAmount(b.dataset.amount));
+
+$('#copyAmount').onclick=async()=>{
+ const value='Rp'+Number($('#amountRange').value).toLocaleString('id-ID');
+ try{await navigator.clipboard.writeText(value);$('#copyAmount').textContent='Tersalin ✓';setTimeout(()=>$('#copyAmount').textContent='Salin nominal dukungan',1500)}
+ catch(e){alert('Nominal: '+value)}
+};
+
+$('#copyAdminPhone').onclick=async()=>{
+ const number=String(adminPhone||'').replace(/\D/g,'');
+ if(!number||number.includes('x')){alert('Isi CONFIG.adminPhone dengan nomor WhatsApp format 628xxxxxxxxxx.');return}
+ const button=$('#copyAdminPhone');
+ try{await navigator.clipboard.writeText(number);button.textContent='Tersalin ✓';setTimeout(()=>button.textContent='Salin Nomor',1400)}
+ catch(e){alert('Nomor WhatsApp Admin: '+number)}
+};
+
+$('#copyChannel').onclick=async()=>{
+ if(!channelUrl){alert('Atur link WhatsApp Channel terlebih dahulu.');return}
+ try{await navigator.clipboard.writeText(channelUrl);$('#copyChannel').textContent='Tersalin ✓';setTimeout(()=>$('#copyChannel').textContent='Salin link',1300)}catch(e){alert(channelUrl)}
+};
+
+$('#contactAdmin').onclick=()=>{
+ if(!adminPhone||adminPhone.includes('x')){alert('Atur nomor WhatsApp admin terlebih dahulu.');return}
+ const name=$('#donorName').value.trim()||'teman TanzMty';
+ const msg=`Halo admin, saya ${name} ingin konfirmasi dukungan sebesar Rp${Number($('#amountRange').value).toLocaleString('id-ID')}.`;
+ window.open('https://wa.me/'+adminPhone+'?text='+encodeURIComponent(msg),'_blank');
+};
+
+const dock=$('#bottomDock'),dockBubble=$('#dockBubble'),dockLinks=[...dock.querySelectorAll('a')];
+let activeDockIndex=0,draggingDock=false,pointerStart=null;
+function moveDockBubble(index, immediate=false){
+ const link=dockLinks[index];if(!link)return;
+ activeDockIndex=index;
+ dockLinks.forEach((item,i)=>item.classList.toggle('active',i===index));
+ const bubbleWidth=Math.round(link.getBoundingClientRect().width*.82);
+ dockBubble.style.width=bubbleWidth+'px';
+ const x=link.offsetLeft+(link.offsetWidth-bubbleWidth)/2;
+ if(immediate){dockBubble.style.transition='none';dockBubble.style.transform=`translate3d(${x}px,0,0)`;dockBubble.offsetHeight;dockBubble.style.transition=''}
+ else dockBubble.style.transform=`translate3d(${x}px,0,0)`;
+ dock.dataset.active=String(index);
+}
+function activateDock(link){
+ const index=dockLinks.indexOf(link);if(index<0)return;
+ moveDockBubble(index);
+ if(link.id==='soundBtn'){
+  $('#audioModal').classList.add('open');
+  return;
+ }
+ if(link.getAttribute('href')==='#helpSection'){document.querySelector('#helpSection').scrollIntoView({behavior:'smooth',block:'center'});return}
+ const target=document.querySelector(link.getAttribute('href'));
+ if(target)target.scrollIntoView({behavior:'smooth',block:'start'});
+}
+dockLinks.forEach(link=>link.addEventListener('click',e=>{e.preventDefault();if(draggingDock)return;activateDock(link)}));
+function dockIndexAt(clientX){
+ const rect=dock.getBoundingClientRect();
+ const innerX=Math.max(0,Math.min(rect.width-1,clientX-rect.left-7));
+ return Math.max(0,Math.min(3,Math.floor(innerX/((rect.width-14)/4))));
+}
+dock.addEventListener('pointerdown',e=>{
+ pointerStart={x:e.clientX,y:e.clientY,id:e.pointerId};draggingDock=false;
+});
+dock.addEventListener('pointermove',e=>{
+ if(!pointerStart||pointerStart.id!==e.pointerId)return;
+ const dx=e.clientX-pointerStart.x,dy=e.clientY-pointerStart.y;
+ if(Math.abs(dx)>7&&Math.abs(dx)>Math.abs(dy)*1.15){
+  draggingDock=true;dock.classList.add('dragging');
+  const index=dockIndexAt(e.clientX);moveDockBubble(index);
+ }
+});
+function finishDockGesture(e){
+ if(!pointerStart)return;
+ if(draggingDock){const index=dockIndexAt(e.clientX);moveDockBubble(index);const link=dockLinks[index];
+  if(link.id==='soundBtn'){ $('#audioModal').classList.add('open'); }
+  else {const target=document.querySelector(link.getAttribute('href'));if(target)target.scrollIntoView({behavior:'smooth',block:link.getAttribute('href')==='#helpSection'?'center':'start'})}
+ }
+ pointerStart=null;dock.classList.remove('dragging');
+ requestAnimationFrame(()=>{draggingDock=false});
+}
+dock.addEventListener('pointerup',finishDockGesture);dock.addEventListener('pointercancel',finishDockGesture);
+window.addEventListener('resize',()=>moveDockBubble(activeDockIndex,true));
+requestAnimationFrame(()=>moveDockBubble(0,true));
+
+let scrollTick=false;
+function syncDockToScroll(){
+ if(draggingDock){scrollTick=false;return;}
+ const nominal=document.querySelector('#nominal');
+ const admin=document.querySelector('#helpSection');
+ const nominalMarker=window.innerHeight*.42;
+ const adminMarker=window.innerHeight*.68;
+ const nearPageBottom=window.scrollY+window.innerHeight>=document.documentElement.scrollHeight-90;
+ let next=0;
+ if(admin && (admin.getBoundingClientRect().top<=adminMarker || nearPageBottom)) next=2;
+ else if(nominal && nominal.getBoundingClientRect().top<=nominalMarker) next=1;
+ if(next!==activeDockIndex) moveDockBubble(next);
+ scrollTick=false;
+}
+window.addEventListener('scroll',()=>{
+ if(!scrollTick){scrollTick=true;requestAnimationFrame(syncDockToScroll)}
+ },{passive:true});
+
+// ================= AUDIO PLAYER LOGIC =================
+const bgAudio = new Audio('https://c.termai.cc/a153/Vdv.mp3');
+bgAudio.loop = true;
+bgAudio.volume = 0.8;
+
+const playPauseBtn = $('#playPauseAudioBtn');
+const volumeRange = $('#volumeRange');
+const volDownBtn = $('#volDownBtn');
+const volUpBtn = $('#volUpBtn');
+const audioStatusText = $('#audioStatusText');
+const volVal = $('#volVal');
+
+function updateAudioUI() {
+ if (bgAudio.paused) {
+  playPauseBtn.innerHTML = '<span class="audio-control-content"><span class="audio-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.8v12.4L18 12 8 5.8Z" fill="currentColor" stroke="none"/></svg></span><span>Play Sound</span></span>';
+  audioStatusText.textContent = 'Status: (Paused)';
+ } else {
+  playPauseBtn.innerHTML = '<span class="audio-control-content"><span class="audio-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 6.5v11M16 6.5v11" fill="none" stroke-width="2.8"/></svg></span><span>Jeda Sound</span></span>';
+  audioStatusText.textContent = 'Status: (Sedang Memutar)';
+ }
+}
+
+playPauseBtn.onclick = () => {
+ if (bgAudio.paused) {
+  bgAudio.play().then(() => {
+   updateAudioUI();
+  }).catch(err => {
+   alert('Gagal memutar audio. Silakan coba lagi.');
+  });
+ } else {
+  bgAudio.pause();
+  updateAudioUI();
+ }
+};
+
+volumeRange.oninput = (e) => {
+ bgAudio.volume = e.target.value;
+ volVal.textContent = Math.round(e.target.value * 100) + '%';
+};
+
+volDownBtn.onclick = () => {
+ bgAudio.volume = Math.max(0, bgAudio.volume - 0.1);
+ volumeRange.value = bgAudio.volume;
+ volVal.textContent = Math.round(bgAudio.volume * 100) + '%';
+};
+
+volUpBtn.onclick = () => {
+ bgAudio.volume = Math.min(1, bgAudio.volume + 0.1);
+ volumeRange.value = bgAudio.volume;
+ volVal.textContent = Math.round(bgAudio.volume * 100) + '%';
+};
+
+$('#closeAudioModal').onclick = () => {
+ $('#audioModal').classList.remove('open');
+};
+$('#audioModal').onclick = (e) => {
+ if(e.target === $('#audioModal')) $('#audioModal').classList.remove('open');
+};
+
+// ================= AL-QURAN DIGITAL =================
+(()=>{
+ const API='https://equran.id/api/v2';
+ const listEl=document.getElementById('quranSurahList');
+ const selectEl=document.getElementById('quranSurahSelect');
+ const searchEl=document.getElementById('quranSearch');
+ const statusEl=document.getElementById('quranStatus');
+ const readerEl=document.getElementById('quranReader');
+ if(!listEl||!selectEl||!readerEl)return;
+ let allSurahs=[];
+ const cache=new Map();
+ const safe=(value)=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+ function renderSurahList(keyword=''){
+  const q=keyword.trim().toLocaleLowerCase('id');
+  const filtered=allSurahs.filter(x=>(x.namaLatin||'').toLocaleLowerCase('id').includes(q)||(x.arti||'').toLocaleLowerCase('id').includes(q)||(x.nama||'').includes(keyword.trim()));
+  listEl.innerHTML=filtered.map(x=>`<button type="button" class="quran-surah" data-surah="${x.nomor}">
+   <span class="quran-number">${x.nomor}</span><span><b>${safe(x.namaLatin)}</b><small>${safe(x.arti||x.tempatTurun||'Surah')} · ${x.jumlahAyat} ayat</small></span><span class="arabic-name">${safe(x.nama||'')}</span>
+  </button>`).join('')||'<div class="quran-loading">Surah tidak ditemukan.</div>';
+  listEl.querySelectorAll('[data-surah]').forEach(btn=>btn.addEventListener('click',()=>loadSurah(Number(btn.dataset.surah))));
+ }
+ async function getJson(url){
+  const response=await fetch(url,{headers:{'Accept':'application/json'}});
+  if(!response.ok)throw new Error('Server data tidak merespons ('+response.status+').');
+  return response.json();
+ }
+ async function loadSurahList(){
+  try{
+   statusEl.textContent='Memuat daftar 114 surah...';
+   const json=await getJson(API+'/surat');
+   if(json.code!==200||!Array.isArray(json.data))throw new Error('Format daftar surah tidak sesuai.');
+   allSurahs=json.data;
+   selectEl.innerHTML='<option value="">Pilih surah (1–114)</option>'+allSurahs.map(x=>`<option value="${x.nomor}">${x.nomor}. ${safe(x.namaLatin)} — ${safe(x.nama||'')}</option>`).join('');
+   renderSurahList();
+   statusEl.textContent=`${allSurahs.length} surah tersedia · Al-Fatihah sampai An-Nas`;
+   const requested=new URLSearchParams(location.search).get('surah');
+   if(requested&&Number(requested)>=1&&Number(requested)<=114)loadSurah(Number(requested));
+  }catch(err){
+   statusEl.textContent='Gagal memuat daftar surah. Periksa koneksi internet lalu muat ulang halaman.';
+   listEl.innerHTML='<div class="quran-loading">Data Al-Qur’an belum bisa dimuat. Coba refresh saat internet aktif.</div>';
+  }
+ }
+ async function loadSurah(number){
+  if(!number||number<1||number>114)return;
+  selectEl.value=String(number);
+  listEl.querySelectorAll('.quran-surah').forEach(b=>b.classList.toggle('active',Number(b.dataset.surah)===number));
+  readerEl.innerHTML='<div class="quran-loading">Memuat ayat-ayat surah...</div>';
+  statusEl.textContent='Mengambil surah '+number+'...';
+  try{
+   let data=cache.get(number);
+   if(!data){
+    const json=await getJson(API+'/surat/'+number);
+    if(json.code!==200||!json.data||!Array.isArray(json.data.ayat))throw new Error('Data ayat tidak lengkap.');
+    data=json.data;cache.set(number,data);
+   }
+   const qaris=[
+    ['01','Abdullah Al-Juhany'],['02','Abdul Muhsin Al-Qasim'],
+    ['03','Abdurrahman As-Sudais'],['04','Ibrahim Al-Dossari'],
+    ['05','Misyari Rasyid Al-Afasy'],['06','Yasser Al-Dosari']
+   ];
+   const audioMap=data.audioFull||{};
+   const defaultQari=audioMap['05']?'05':(Object.keys(audioMap).find(k=>audioMap[k])||'05');
+   const initialAudio=audioMap[defaultQari]||'';
+   readerEl.innerHTML=`<div class="quran-reader-head"><div><h3>${safe(data.namaLatin)} <span style="font-family:serif">${safe(data.nama||'')}</span></h3><p>${safe(data.arti||'')} · ${safe(data.tempatTurun||'')} · ${data.jumlahAyat} ayat</p></div><span class="quran-number">${data.nomor}/114</span></div>
+   <div class="quran-audio-card">
+    <div class="quran-audio-top"><span class="quran-audio-icon">♫</span><div><div class="quran-audio-title">Dengarkan Surah ${safe(data.namaLatin)}</div><div class="quran-audio-sub">Audio murottal · pilih qari favoritmu</div></div></div>
+    <div class="quran-audio-controls">
+     <div class="quran-qari-picker">
+      <button type="button" class="quran-qari-trigger" aria-haspopup="listbox" aria-expanded="false"><span class="quran-qari-current">${qaris.find(([id])=>id===defaultQari)?.[1]||'Pilih qari'}</span><span class="qari-chevron">⌄</span></button>
+      <div class="quran-qari-menu" role="listbox" aria-label="Pilih qari">${qaris.map(([id,name])=>`<button type="button" class="quran-qari-option ${id===defaultQari?'active':''}" data-qari="${id}" role="option" aria-selected="${id===defaultQari}"><span>${name}</span><span class="qari-check">✓</span></button>`).join('')}</div>
+     </div>
+     <button type="button" class="quran-audio-stop"><span aria-hidden="true">■</span> Berhenti</button>
+    </div>
+    <audio class="quran-audio-player" controls preload="none" ${initialAudio?'src="'+safe(initialAudio)+'"':''}></audio>
+    <div class="quran-audio-note">${initialAudio?'Tekan tombol play untuk memutar bacaan.':'Audio untuk surah ini belum tersedia dari sumber.'}</div>
+   </div>
+   ${data.ayat.map(a=>`<article class="quran-verse">
+    <div class="quran-verse-top"><span class="quran-verse-num">Ayat ${a.nomorAyat}</span></div>
+    <div class="quran-arabic" lang="ar">${safe(a.teksArab)}</div>
+    <div class="quran-latin" lang="id-Latn">${safe(a.teksLatin||a.teksLatinIndonesia||'Latin tidak tersedia untuk ayat ini.')}</div>
+    <div class="quran-translation">${safe(a.teksIndonesia)}</div>
+   </article>`).join('')}`;
+   statusEl.textContent=`${data.namaLatin} berhasil dimuat · ${data.ayat.length} ayat`;
+   const player=readerEl.querySelector('.quran-audio-player');
+   const qariPicker=readerEl.querySelector('.quran-qari-picker');
+   const qariTrigger=readerEl.querySelector('.quran-qari-trigger');
+   const qariCurrent=readerEl.querySelector('.quran-qari-current');
+   const qariOptions=[...readerEl.querySelectorAll('.quran-qari-option')];
+   const stopButton=readerEl.querySelector('.quran-audio-stop');
+   const audioNote=readerEl.querySelector('.quran-audio-note');
+   function audioUrlFor(qariId){
+    const raw=audioMap[qariId];
+    if(typeof raw!=='string')return '';
+    try{const url=new URL(raw);return url.protocol==='https:'?url.href:''}catch(e){return ''}
+   }
+   const qariMenu=readerEl.querySelector('.quran-qari-menu');
+   function closeQariMenu(){
+    qariPicker.classList.remove('open');
+    qariTrigger.setAttribute('aria-expanded','false');
+    if(qariMenu.parentElement!==qariPicker)qariPicker.appendChild(qariMenu);
+    qariMenu.style.top='';qariMenu.style.left='';qariMenu.style.width='';qariMenu.style.display='';
+   }
+   function openQariMenu(){
+    const rect=qariTrigger.getBoundingClientRect();
+    const maxH=Math.min(window.innerHeight*.58,390);
+    qariMenu.style.maxHeight=maxH+'px';
+    qariMenu.style.width=Math.min(Math.max(rect.width,240),window.innerWidth-24)+'px';
+    qariMenu.style.left=Math.max(12,Math.min(rect.left,window.innerWidth-Math.min(Math.max(rect.width,240),window.innerWidth-24)-12))+'px';
+    qariMenu.style.display='block';
+    qariMenu.style.top='12px';
+    document.body.appendChild(qariMenu);
+    const menuH=Math.min(qariMenu.scrollHeight,maxH);
+    const below=window.innerHeight-rect.bottom-12;
+    const above=rect.top-12;
+    const top=(below>=Math.min(menuH,220)||below>=above)
+      ?Math.min(rect.bottom+8,window.innerHeight-menuH-12)
+      :Math.max(12,rect.top-menuH-8);
+    qariMenu.style.top=top+'px';
+    qariPicker.classList.add('open');
+    qariTrigger.setAttribute('aria-expanded','true');
+   }
+   function chooseQari(qariId){
+    const selected=qaris.find(([id])=>id===qariId);
+    if(!selected)return;
+    const wasPlaying=!player.paused;
+    const nextUrl=audioUrlFor(qariId);
+    player.pause();player.currentTime=0;
+    qariCurrent.textContent=selected[1];
+    qariOptions.forEach(option=>{const active=option.dataset.qari===qariId;option.classList.toggle('active',active);option.setAttribute('aria-selected',String(active))});
+    closeQariMenu();
+    if(nextUrl){player.src=nextUrl;player.load();audioNote.textContent='Qari diganti. Tekan play untuk mendengarkan.';if(wasPlaying)player.play().catch(()=>{audioNote.textContent='Tekan play untuk memulai audio.'})}
+    else{player.removeAttribute('src');player.load();audioNote.textContent='Audio qari ini belum tersedia untuk surah tersebut.'}
+   }
+   qariTrigger.addEventListener('click',()=>{if(qariPicker.classList.contains('open'))closeQariMenu();else openQariMenu()});
+   qariOptions.forEach(option=>option.addEventListener('click',()=>chooseQari(option.dataset.qari)));
+   document.addEventListener('click',event=>{if(!qariPicker.contains(event.target)&&!qariMenu.contains(event.target))closeQariMenu()});
+   window.addEventListener('resize',closeQariMenu);
+   window.addEventListener('scroll',()=>{if(qariPicker.classList.contains('open'))closeQariMenu()},{passive:true});
+   stopButton.addEventListener('click',()=>{player.pause();player.currentTime=0;audioNote.textContent='Audio dihentikan.'});
+   player.addEventListener('error',()=>{audioNote.textContent='Audio gagal dimuat. Coba pilih qari lain atau periksa koneksi internet.'});
+   readerEl.scrollIntoView({behavior:'smooth',block:'start'});
+  }catch(err){
+   readerEl.innerHTML='<div class="quran-loading">Surah gagal dimuat. Periksa koneksi internet lalu coba pilih surah lagi.</div>';
+   statusEl.textContent='Tidak dapat mengambil data surah.';
+  }
+ }
+ searchEl.addEventListener('input',()=>renderSurahList(searchEl.value));
+ selectEl.addEventListener('change',()=>loadSurah(Number(selectEl.value)));
+ loadSurahList();
+})();
+
+</script>
+</body>
+</html>
